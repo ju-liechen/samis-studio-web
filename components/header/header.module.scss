@@ -1,0 +1,33 @@
+@import 'styles/base/variables.scss';
+
+.header {
+  height: 110px;
+  background-color: $brand-color-1;
+  display: flex;
+
+  @media #{$phone} {
+    height: 70px;
+  }
+
+  > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo {
+    width: 143px;
+    height: 37px;
+    cursor: pointer;
+
+    color: $text-color;
+    font-family: $font-family;
+    font-size: large;
+    font-weight: bold;
+
+    @media #{$phone} {
+      width: 100px;
+      height: 26px;
+    }
+  }
+}
