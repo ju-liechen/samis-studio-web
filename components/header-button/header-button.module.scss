@@ -8,7 +8,7 @@
     all: unset;
     position: relative;
 
-    background-color: $brand-color-1;
+    background-color: transparent;
     display: flex;
     cursor: pointer;
 
@@ -31,5 +31,9 @@
     background: $dark-green;
     width: 0px;
     height: 5px;
+  }
+
+  .active {
+    width: 50%;
   }
 }
