@@ -7,25 +7,26 @@ type ProductProps = {
   price: number
   width: number
   length: number
+  image: string
 }
 
-export const Product = ({ title, price, width, length }: ProductProps) => {
+export const Product = ({ title, price, width, length, image }: ProductProps) => {
   return (
     <div className={styles.container}>
       <Image
-        src="/images/sample-rug.jpg"
+        src={image}
         width={436}
         height={332}
-        alt="korok leaf coaster"
+        alt={title}
       />
       <div className={styles.singleProduct}>
         <div className={styles.description}>
-          <text className={styles.title}>{title}</text>
-          <text className={styles.price}>${price}</text>
+          <div className={styles.title}>{title}</div>
+          <div className={styles.price}>${price}</div>
         </div>
-        <text className={styles.dimensions}>
+        <div className={styles.dimensions}>
           {width}" x {length}"{' '}
-        </text>
+        </div>
       </div>
     </div>
   )
