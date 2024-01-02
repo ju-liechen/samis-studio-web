@@ -16,7 +16,7 @@ export const HeaderButton = ({
   currentPage,
   onClick,
 }: HeaderButtonProps) => {
-  const isActive = currentPage === destination
+  const isActive = currentPage.includes(destination)
   return (
     <div className={styles.container}>
       <button

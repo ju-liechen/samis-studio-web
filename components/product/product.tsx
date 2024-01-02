@@ -1,6 +1,5 @@
-import Image from 'next/image'
-
 import styles from './product.module.scss'
+import { useRouter } from 'next/router';
 
 type ProductProps = {
   title: string
@@ -8,17 +7,25 @@ type ProductProps = {
   width: number
   length: number
   image: string
+  id: number
 }
 
-export const Product = ({ title, price, width, length, image }: ProductProps) => {
+export const Product = ({ title, price, width, length, image, id }: ProductProps) => {
+  const router = useRouter();
+
+  const handleProductClick = (productId: any) => {
+    router.push(`/products/${productId}`);
+  };
+
   return (
-    <div className={styles.container}>
-      <Image
-        src={image}
-        width={436}
-        height={332}
-        alt={title}
-      />
+    <div className={styles.container} onClick={() => handleProductClick(id)}>
+      <div className={styles.imageContainer}>
+        <img
+          src={image}
+          alt={title}
+          style={{ borderRadius: '10px' }}
+        />
+      </div>
       <div className={styles.singleProduct}>
         <div className={styles.description}>
           <div className={styles.title}>{title}</div>

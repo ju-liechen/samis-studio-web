@@ -5,6 +5,7 @@ import styles from './product-grid.module.scss'
 
 export const ProductGrid = ({ }) => {
   const [products, setProducts] = useState([]);
+
   useEffect(() => {
     fetch(`${process.env.NEXT_PUBLIC_API_URL}/public/product/products`)
       .then(response => response.json())
@@ -14,14 +15,16 @@ export const ProductGrid = ({ }) => {
   return (
     <div className={styles.container}>
       {products.map((product, index) => (
-        <Product
-          key={index}
-          title={product.title}
-          price={product.price}
-          width={product.width}
-          length={product.length}
-          image={product.image}
-        />
+        <div key={product.id}>
+          <Product
+            title={product.title}
+            price={product.price}
+            width={product.width}
+            length={product.length}
+            image={product.image}
+            id={product.id}
+          />
+        </div>
       ))}
     </div>
   )
