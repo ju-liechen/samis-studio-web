@@ -2,11 +2,13 @@
 
 .container {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   padding-inline: 5px;
   padding-block: 10px;
   background-color: $brand-color-3;
 
   margin: 0;
+  padding-top: 50px;
+  height: 100vh;
 }
