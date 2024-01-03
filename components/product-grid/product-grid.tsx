@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { Product } from 'components/product/product'
+import { motion } from 'framer-motion';
+import { Product } from 'components/product/product';
+import styles from './product-grid.module.scss';
 
-import styles from './product-grid.module.scss'
-
-export const ProductGrid = ({ }) => {
+export const ProductGrid = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -12,10 +12,24 @@ export const ProductGrid = ({ }) => {
       .then(data => setProducts(data.results))
       .catch(error => console.error('Error fetching data: ', error));
   }, []);
+
+  const itemVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1 },
+    exit: { opacity: 0 }
+  };
+
   return (
     <div className={styles.container}>
       {products.map((product, index) => (
-        <div key={product.id}>
+        <motion.div
+          key={product.id}
+          variants={itemVariants}
+          initial="hidden"
+          animate="visible"
+          exit="exit"
+          transition={{ delay: index * 0.1, duration: 1 }}
+        >
           <Product
             title={product.title}
             price={product.price}
@@ -24,8 +38,8 @@ export const ProductGrid = ({ }) => {
             image={product.image}
             id={product.id}
           />
-        </div>
+        </motion.div>
       ))}
     </div>
-  )
-}
+  );
+};
