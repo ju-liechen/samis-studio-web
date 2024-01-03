@@ -1,0 +1,59 @@
+@import 'styles/base/variables.scss';
+
+.container {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: left;
+  position: relative;
+  padding: 30px;
+  padding-bottom: 20px;
+
+  background-color: $white;
+  border-radius: 10px;
+
+  font-family: $font-family;
+
+  cursor: pointer;
+  transition: box-shadow 0.5s ease-in-out, transform 0.5s ease-in-out;
+
+  img {
+    height: 250px;
+    width: auto;
+    max-width: 500px;
+    object-fit: contain;
+    padding-bottom: 10px;
+  }
+
+  &:hover {
+    box-shadow: 10px 10px 15px 1px $dark-grey;
+    transform: translate(-5px, -5px);
+  }
+
+  .singleProduct {
+    display: flex;
+    flex-direction: column;
+
+    .description {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 10px;
+
+      .title {
+        font-weight: 600;
+      }
+
+      .price {
+        font-size: x-large;
+        font-weight: bold;
+        color: $dark-green;
+      }
+    }
+
+    .dimensions {
+      font-weight: lighter;
+      font-style: italic;
+    }
+  }
+}

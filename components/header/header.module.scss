@@ -1,0 +1,39 @@
+@import 'styles/base/variables.scss';
+
+.header {
+  height: 110px;
+  background-color: $brand-color-2;
+  display: flex;
+
+  @media #{$phone} {
+    height: 70px;
+  }
+
+  > div {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 80px;
+  }
+
+  .logo {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    img {
+      width: 50%;
+      height: auto;
+    }
+
+    color: $text-color;
+    font-family: $font-family;
+    font-style: italic;
+
+    @media #{$phone} {
+      width: 100px;
+      height: 26px;
+    }
+  }
+}

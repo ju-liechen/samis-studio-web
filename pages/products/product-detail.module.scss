@@ -1,0 +1,81 @@
+@import 'styles/base/variables.scss';
+
+.outerContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
+
+  background-color: $brand-color-3;
+}
+
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background-color: white;
+  border-radius: 20px;
+
+  width: 80%;
+  height: 80%;
+
+  transform: translateY(-43px);
+
+  padding: 30px;
+}
+
+.innerContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.productImage {
+  display: flex;
+  flex-direction: column;
+
+  object-fit: contain;
+}
+
+.productDetails {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+}
+
+.productImage {
+  max-width: 800px;
+  max-height: 850px;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.backButton {
+  width: 100px;
+  all: unset;
+
+  cursor: pointer;
+
+}
+
+.cartButton {
+  all: unset;
+  cursor: pointer;
+
+  &:hover {
+    color: blue;
+    transition: 0.7s ease-in-out;
+  }
+
+  p {
+    font-weight: bold;
+  }
+}
