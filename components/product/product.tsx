@@ -19,13 +19,11 @@ export const Product = ({ title, price, width, length, image, id }: ProductProps
 
   return (
     <div className={styles.container} onClick={() => handleProductClick(id)}>
-      <div className={styles.imageContainer}>
-        <img
-          src={image}
-          alt={title}
-          style={{ borderRadius: '10px' }}
-        />
-      </div>
+      <img
+        src={image}
+        alt={title}
+        style={{ borderRadius: '10px' }}
+      />
       <div className={styles.singleProduct}>
         <div className={styles.description}>
           <div className={styles.title}>{title}</div>
