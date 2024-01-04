@@ -4,23 +4,18 @@
   height: 110px;
   background-color: $brand-color-2;
   display: flex;
-
-  @media #{$phone} {
-    height: 70px;
-  }
-
-  > div {
-    display: flex;
-    align-items: center;
-    justify-content: left;
-    gap: 80px;
-  }
+  align-items: center;
+  width: 100%;
 
   .logo {
     cursor: pointer;
     display: flex;
+    justify-content: left;
     align-items: center;
-    gap: 10px;
+    padding-left: 20px;
+    gap: 15px;
+    width: 10%;
+    min-width: 200px;
 
     img {
       width: 50%;
@@ -31,9 +26,30 @@
     font-family: $font-family;
     font-style: italic;
 
-    @media #{$phone} {
-      width: 100px;
-      height: 26px;
+    .logoText{
+      width: 200px;
+      transform: translateY(7px);
     }
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    width: 80%;
+  }
+
+  .buttons-mobile {
+    display: flex;
+    justify-content: right;
+    padding-right: 20px;
+    width: 80%;
+  }
+
+  .buttons-tablet {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    width: 60%;
   }
 }
