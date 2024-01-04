@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { useRouter } from 'next/router';
+import { useMediaQuery } from 'react-responsive'
 import { BasicLayout } from 'components/layouts/basic-layout'
 import styles from './product-detail.module.scss'
 
@@ -9,6 +10,23 @@ const ProductDetailPage = () => {
   const [product, setProduct] = useState(null);
   const router = useRouter();
   const { id } = router.query;
+
+  const isMobile = useMediaQuery({ maxWidth: 768 });
+  const mobileHeaderStyle = {
+    fontSize: '18px',
+    fontWeight: 'bold'
+  };
+  const mobileTextStyle = {
+    fontSize: '14px'
+  };
+  const mobileDimensionStyle = {
+    fontSize: '14px',
+    fontStyle: 'italic',
+  }
+  const mobilePriceStyle = {
+    fontSize: '14px',
+    fontWeight: 'bold'
+  }
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -48,11 +66,11 @@ const ProductDetailPage = () => {
                   />
               </div>
               <div className={styles.productDetails}>
-                <div style={{ fontWeight: 'bold', fontSize: '100px'}}>{product.title}</div>
-                <div style={{ fontSize: '18px' }}>{product.description}</div>
-                <div style={{ fontSize: '18px', fontStyle: 'italic' }}>{product.width} " x {product.length} "</div>
-                <div style={{ fontSize: '50px', fontWeight: 'bold' }}>${product.price} CAD</div>
-                <button className={styles.cartButton}> <p>Add to Cart</p> </button>
+                <div style={isMobile? mobileHeaderStyle : { fontWeight: 'bold', fontSize: '100px' }}>{product.title}</div>
+                <div style={isMobile? mobileTextStyle : { fontSize: '18px' }}>{product.description}</div>
+                <div style={isMobile? mobileDimensionStyle : { fontSize: '18px', fontStyle: 'italic' }}>{product.width} " x {product.length} "</div>
+                <div style={isMobile? mobilePriceStyle : { fontSize: '50px', fontWeight: 'bold' }}>${product.price} CAD</div>
+                <button className={styles.cartButton}> <p style={isMobile ? mobileTextStyle : {}}>[ Add to Cart ]</p> </button>
               </div>
             </div>
           </motion.div>

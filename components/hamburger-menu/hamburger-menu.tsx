@@ -33,37 +33,39 @@ export const HamburgerMenu = ({ }) => {
         initial="hidden"
         animate="visible"
         exit="exit"
-        transition={{ duration: 1 }}
+        transition={{ duration: 0.5 }}
         className={styles.menuBar}>
-          <HeaderButton
-            text="PRODUCTS"
-            isBold={true}
-            destination="/products"
-            currentPage={currentPage}
-            onClick={() => router.push('/products')}
-          />
-          <HeaderButton
-            text="COMMISSIONS"
-            isBold={true}
-            destination="/commissions"
-            currentPage={currentPage}
-            onClick={() => router.push('/commissions')}
-          />
-          <HeaderButton
-            text="ABOUT"
-            isBold={true}
-            destination="/about"
-            currentPage={currentPage}
-            onClick={() => router.push('/about')}
-          />
-          <HeaderButton
-            text="FAQ"
-            isBold={true}
-            destination="/faq"
-            currentPage={currentPage}
-            onClick={() => router.push('/faq')}
+            <HeaderButton
+              text="PRODUCTS"
+              isBold={true}
+              destination="/products"
+              currentPage={currentPage}
+              onClick={() => router.push('/products')}
             />
-          <button className={styles.closeButton} onClick={toggleMenu}><p>Close</p></button>
+            <HeaderButton
+              text="COMMISSIONS"
+              isBold={true}
+              destination="/commissions"
+              currentPage={currentPage}
+              onClick={() => router.push('/commissions')}
+            />
+            <HeaderButton
+              text="ABOUT"
+              isBold={true}
+              destination="/about"
+              currentPage={currentPage}
+              onClick={() => router.push('/about')}
+            />
+            <HeaderButton
+              text="FAQ"
+              isBold={true}
+              destination="/faq"
+              currentPage={currentPage}
+              onClick={() => router.push('/faq')}
+              />
+            <button className={styles.closeButton} onClick={toggleMenu}><p>Close</p></button>
+            <div className={styles.spacer}></div>
+            <p style={{ color: 'grey', fontStyle: 'italic', fontSize: '10px', padding: '10px' }}>julie@inputlogic.ca</p>
         </motion.div>
       )}
     </div>
