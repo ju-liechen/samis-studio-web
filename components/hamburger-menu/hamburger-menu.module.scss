@@ -1,0 +1,53 @@
+@import 'styles/base/variables.scss';
+
+.container{
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  width: fit-content;
+  transform: translateY(-7px);
+
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    width: 22px;
+    cursor: pointer;
+    gap: 4px;
+  
+    .line {
+      width: 100%;
+      height: 3px;
+      background-color: white;
+      border-radius: 2px;
+    }
+  }
+
+  .menuBar {
+    display: flex;
+    flex-direction: column;
+    padding-block: 50px;
+    padding-inline: 10px;
+    gap: 15px;
+
+    height: 100vh;
+    background-color: $brand-color-2;
+
+    .closeButton {
+      padding-top: 30px;
+      all: unset;
+      cursor: pointer;
+
+      &:hover {
+        color: $dark-green;
+        transition: 1s ease-in-out;
+      }
+    }
+
+    .spacer {
+      flex-grow: 1;
+    }
+  }
+  
+}

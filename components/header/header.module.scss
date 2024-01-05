@@ -1,26 +1,27 @@
 @import 'styles/base/variables.scss';
 
 .header {
+  container-type: inline-size;
+
   height: 110px;
   background-color: $brand-color-2;
   display: flex;
+  align-items: center;
+  width: 100%;
 
-  @media #{$phone} {
-    height: 70px;
-  }
+  padding-inline: 20px;
 
-  > div {
-    display: flex;
-    align-items: center;
-    justify-content: left;
-    gap: 80px;
-  }
+  position: absolute;
+  z-index: 1000;
 
   .logo {
     cursor: pointer;
     display: flex;
+    justify-content: left;
     align-items: center;
-    gap: 10px;
+    gap: 15px;
+    width: 10%;
+    min-width: 200px;
 
     img {
       width: 50%;
@@ -31,9 +32,39 @@
     font-family: $font-family;
     font-style: italic;
 
-    @media #{$phone} {
-      width: 100px;
-      height: 26px;
+    .logoText{
+      width: 200px;
+      transform: translateY(7px);
+    }
+  }
+
+  .hamburgerMenu {
+    display: none;
+
+    @container (max-width: 768px) {
+      display: flex;
+      justify-content: flex-end;
+      width: 100%;
+    }
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    width: 100%;
+    transform: translateX(-8em);
+
+    @container (max-width: 768px) {
+      display: none;
+    }
+
+    @container (max-width: 1064px) and (min-width: 768px) {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      width: 100%;
+      transform: translateX(-5em);
     }
   }
 }

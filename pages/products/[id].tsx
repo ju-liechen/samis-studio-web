@@ -40,7 +40,7 @@ const ProductDetailPage = () => {
         >
             <div className={styles.innerContainer}>
               <div className={styles.productImage}>
-                <button className={styles.backButton} onClick={() => router.push('/products')}> Back </button>
+                <button className={styles.backButton} onClick={() => router.push('/products')}> <p>Back</p> </button>
                 <img
                   src={product.image}
                   alt={product.title}
@@ -48,11 +48,11 @@ const ProductDetailPage = () => {
                   />
               </div>
               <div className={styles.productDetails}>
-                <div style={{ fontWeight: 'bold', fontSize: '100px'}}>{product.title}</div>
-                <div style={{ fontSize: '18px' }}>{product.description}</div>
-                <div style={{ fontSize: '18px', fontStyle: 'italic' }}>{product.width} " x {product.length} "</div>
-                <div style={{ fontSize: '50px', fontWeight: 'bold' }}>${product.price} CAD</div>
-                <button className={styles.cartButton}> <p>Add to Cart</p> </button>
+                <div className={styles.title}>{product.title}</div>
+                <div className={styles.description}>{product.description}</div>
+                <div className={styles.dimensions}>{product.width} " x {product.length} "</div>
+                <div className={styles.price}>${product.price} CAD</div>
+                <button className={styles.cartButton}> <p>[ Add to Cart ]</p> </button>
               </div>
             </div>
           </motion.div>
