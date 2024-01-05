@@ -1,6 +1,5 @@
 import styles from './product.module.scss'
 import { useRouter } from 'next/router';
-import { useMediaQuery } from 'react-responsive'
 
 type ProductProps = {
   title: string
@@ -13,10 +12,6 @@ type ProductProps = {
 
 export const Product = ({ title, price, width, length, image, id }: ProductProps) => {
   const router = useRouter();
-  const isMobile = useMediaQuery({ maxWidth: 768 })
-  const mobileStyle = {
-    fontSize: 'smaller'
-  };
 
   const handleProductClick = (productId: any) => {
     router.push(`/products/${productId}`);
@@ -31,10 +26,10 @@ export const Product = ({ title, price, width, length, image, id }: ProductProps
       />
       <div className={styles.singleProduct}>
         <div className={styles.description}>
-          <div className={styles.title} style={isMobile ? mobileStyle : {}}>{title}</div>
-          <div className={styles.price} style={isMobile ? mobileStyle : {}}>${price}</div>
+          <div className={styles.title}>{title}</div>
+          <div className={styles.price}>${price}</div>
         </div>
-        <div className={styles.dimensions} style={isMobile ? mobileStyle : {}}>
+        <div className={styles.dimensions}>
           {width}" x {length}"{' '}
         </div>
       </div>

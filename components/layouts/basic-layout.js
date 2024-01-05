@@ -8,7 +8,9 @@ export const BasicLayout = ({ children }) => {
   return (
     <>
       <Header />
-      {children}
+      <div style={{ paddingTop: '110px' }}>
+        {children}
+      </div>
 
       {isMobile ? (
         <div/>

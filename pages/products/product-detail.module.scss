@@ -11,6 +11,7 @@
 }
 
 .mainContainer {
+  container-type: inline-size;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -25,6 +26,46 @@
   transform: translateY(-43px);
 
   padding: 30px;
+
+  .title {
+    font-size: 40px;
+    font-weight: bold;
+
+    @container (max-width: 620px) {
+      font-size: 20px;
+      font-weight: bold;
+    }
+  }
+
+  .description {
+    font-size: 20px;
+
+    @container (max-width: 620px) {
+      font-size: 14px;
+    }
+  }
+
+  .price {
+    font-weight: bold;
+    font-size: 20px;
+    padding-block: 20px;
+
+    @container (max-width: 620px) { 
+      font-weight: bold;
+      font-size: 16px;
+      padding-block: 12px;
+    }
+  }
+
+  .dimensions {
+    font-size: 16px;
+    font-style: italic;
+
+    @container (max-width: 620px) { 
+      font-size: 12px;
+      font-style: italic;
+    }
+  }
 }
 
 .innerContainer {
@@ -61,8 +102,17 @@
 .backButton {
   width: 100px;
   all: unset;
+  font-size: 20px;
 
   cursor: pointer;
+
+  p {
+    font-size: 20px;
+
+    @container (max-width: 620px) { 
+      font-size: 12px;
+    }
+  }
 
 }
 
@@ -77,5 +127,9 @@
 
   p {
     font-weight: bold;
+
+    @container (max-width: 620px) {
+      font-size: 14px;
+    }
   }
 }

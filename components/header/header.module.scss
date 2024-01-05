@@ -1,18 +1,24 @@
 @import 'styles/base/variables.scss';
 
 .header {
+  container-type: inline-size;
+
   height: 110px;
   background-color: $brand-color-2;
   display: flex;
   align-items: center;
   width: 100%;
 
+  padding-inline: 20px;
+
+  position: absolute;
+  z-index: 1000;
+
   .logo {
     cursor: pointer;
     display: flex;
     justify-content: left;
     align-items: center;
-    padding-left: 20px;
     gap: 15px;
     width: 10%;
     min-width: 200px;
@@ -32,24 +38,33 @@
     }
   }
 
+  .hamburgerMenu {
+    display: none;
+
+    @container (max-width: 768px) {
+      display: flex;
+      justify-content: flex-end;
+      width: 100%;
+    }
+  }
+
   .buttons {
     display: flex;
     justify-content: center;
     gap: 80px;
-    width: 80%;
-  }
+    width: 100%;
+    transform: translateX(-8em);
 
-  .buttons-mobile {
-    display: flex;
-    justify-content: right;
-    padding-right: 20px;
-    width: 80%;
-  }
+    @container (max-width: 768px) {
+      display: none;
+    }
 
-  .buttons-tablet {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    width: 60%;
+    @container (max-width: 1064px) and (min-width: 768px) {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      width: 100%;
+      transform: translateX(-5em);
+    }
   }
 }
