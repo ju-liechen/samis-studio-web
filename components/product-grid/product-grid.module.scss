@@ -1,10 +1,19 @@
 .container {
-  container-type: inline-size;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  width: 100%;
   justify-content: center;
+  align-items: center;
   gap: 20px;
 
-  width: 80%;
-  max-width: 1500px;
+  .gridContainer {
+    container-type: inline-size;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+
+    width: 80%;
+    max-width: 1500px;
+  }
 }
