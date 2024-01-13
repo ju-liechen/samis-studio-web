@@ -28,7 +28,6 @@ export const ProductGrid = () => {
         queryParam = 'ordering=-created_at';
         break;
     }
-  
     fetch(`${process.env.NEXT_PUBLIC_API_URL}/public/product/products?${queryParam}`)
       .then(response => response.json())
       .then(data => setProducts(data.results))
@@ -64,6 +63,8 @@ export const ProductGrid = () => {
               length={product.length}
               image={product.image}
               id={product.id}
+              on_hold={product.onHold}
+              is_sold={product.isSold}
             />
           </motion.div>
         ))}

@@ -71,3 +71,33 @@
     }
   }
 }
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+
+  .soldText {
+    color: rgb(133, 0, 0);
+    padding-bottom: 20px;
+    font-weight: bold;
+    font-size: 30px;
+  }
+
+  .holdText {
+    color: $brand-color-4;
+    padding-bottom: 20px;
+    font-weight: bold;
+    font-size: 30px;
+  }
+}
