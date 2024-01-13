@@ -77,11 +77,9 @@
   justify-content: center;
 }
 
-.productImage {
+.productImageContainer {
   display: flex;
   flex-direction: column;
-
-  object-fit: contain;
 }
 
 .productDetails {
@@ -132,4 +130,12 @@
       font-size: 14px;
     }
   }
+}
+
+.holdText {
+  color: $brand-color-4
+}
+
+.soldText{
+  color: red;
 }

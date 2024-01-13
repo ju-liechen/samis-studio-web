@@ -39,12 +39,12 @@ const ProductDetailPage = () => {
           className={styles.mainContainer}
         >
             <div className={styles.innerContainer}>
-              <div className={styles.productImage}>
+              <div className={styles.productImageContainer}>
                 <button className={styles.backButton} onClick={() => router.push('/products')}> <p>Back</p> </button>
-                <img
-                  src={product.image}
-                  alt={product.title}
-                  className={styles.productImage}
+                  <img
+                    src={product.image}
+                    alt={product.title}
+                    className={styles.productImage}
                   />
               </div>
               <div className={styles.productDetails}>
@@ -52,7 +52,18 @@ const ProductDetailPage = () => {
                 <div className={styles.description}>{product.description}</div>
                 <div className={styles.dimensions}>{product.width} " x {product.length} "</div>
                 <div className={styles.price}>${product.price} CAD</div>
-                <button className={styles.cartButton}> <p>[ Add to Cart ]</p> </button>
+                {
+                  product.onHold ? (
+                    <p className={styles.holdText}>Product is currently on hold. Please check again later!</p>
+                  ) : product.isSold ? (
+                    <div style={{ display: 'flex', flexDirection: 'column' }}>
+                      <p className={styles.soldText}>Product is sold out, sorry!</p>
+                      <p>Check out the commissions page if you'd like to request another</p>
+                    </div>
+                  ) : (
+                    <button className={styles.cartButton}> <p>[ Add to Cart ]</p> </button>
+                  )
+                }
               </div>
             </div>
           </motion.div>
